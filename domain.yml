@@ -15,9 +15,9 @@ entities:
 - people
 - price
 intents:
-- greet
 - restaurant_search
 - affirm
+- greet
 - goodbye
 - stop
 slots:
@@ -26,11 +26,7 @@ slots:
   location:
     type: text
   price:
-    type: categorical
-    values:
-    - low
-    - medium
-    - high
+    type: text
 templates:
   utter_ask_cuisine:
   - buttons:

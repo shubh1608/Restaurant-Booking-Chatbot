@@ -21,6 +21,7 @@
 - Thanks
 - thank u
 - Thanks
+- Thanks
 
 ## intent:goodbye
 - bye
@@ -54,6 +55,7 @@
 - hi
 - hi
 - high
+- hi
 
 ## intent:restaurant_search
 - i'm looking for a place to eat
@@ -112,13 +114,40 @@
 - [bombay](location)
 - find me restaurant
 - [kochi](location)
+- [Mexican](cuisine)
+- [American](cuisine)
+- [Ahmedabad](location)
+- find me [mexican](cuisine) restaurants in [Kochi](location)
+- Please find me [american](cuisine) restaurants in [Bombay](location:Mumbai)
+- Please find me restaurants in [Bombay](location:Mumbai)
+- show me restaurants in [Ahmedabad](location)
+- show me [mexican](restaurants) in [Bombay](location:Mumbai)
+- show me [american](restaurants) in [Mumbai](location)
+- please show me [mexican](cuisine) restaurants
+- please find me restaurants in [300 to 700](price:mid) range
+- find me [moderate](price:mid) restaurants in [Hyderabad](location)
+- find me [luxurious](price:high) restaurants in [Mumbai](location)
+- find me [luxurious](price:high) restaurants in [Bombay](location:Mumbai)
+- I am looking for a dinner in [Mumbai](location)
+- show me restaurants in [less than 300](price:low) range
+- find me restaurants in [low](price) budget
+- show me some restaurants in [high](price) budget
+- [medium](price)
+- [low](price)
+- [high](price)
+- find me restaurants
+- [Mumbai](location)
 - [Italian](cuisine)
+- [medium](price)
 
 ## synonym:4
 - four
 
 ## synonym:Delhi
 - New Delhi
+
+## synonym:Mumbai
+- Bombay
 
 ## synonym:bangalore
 - Bengaluru
@@ -128,11 +157,15 @@
 - Chinese
 - Chines
 
+## synonym:high
+- luxurious
+
+## synonym:low
+- less than 300
+
 ## synonym:mid
 - moderate
-
-## synonym:mumbai
-- Bombay
+- 300 to 700
 
 ## synonym:vegetarian
 - veggie
