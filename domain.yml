@@ -2,6 +2,9 @@
 ---
 actions:
 - action_search_restaurants
+- action_validate_city
+- utter_suggest_email
+- action_send_mail
 - utter_ask_cuisine
 - utter_ask_howcanhelp
 - utter_ask_location
@@ -12,10 +15,12 @@ actions:
 entities:
 - cuisine
 - location
+- email
 - people
 - price
 intents:
 - restaurant_search
+- email_request
 - affirm
 - greet
 - goodbye
@@ -26,6 +31,10 @@ slots:
   location:
     type: text
   price:
+    type: text
+  email:
+    type: text
+  results:
     type: text
 templates:
   utter_ask_cuisine:
@@ -61,6 +70,15 @@ templates:
   utter_goodbye:
   - text: goodbye :(
   - text: Bye-bye
+  utter_ask_email:
+  - text: Please provide your email address
+  utter_suggest_email:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: would you like these details sent to you on email ?
   utter_greet:
   - text: hey there! How may i help you
   - text: Hi, How can I help you!
