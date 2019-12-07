@@ -11,29 +11,69 @@ class ActionSearchRestaurants(Action):
 	def name(self):
 		return 'action_search_restaurants'
 		
+	
 	def run(self, dispatcher, tracker, domain):
-		def run(self, dispatcher, tracker, domain):
+		
+		def create_response(restaurants):
+			response=""
+			if d['results_found'] == 0:
+				response= "no results"
+			else:
+				srnum=0
+				for restaurant in restaurants:
+					srnum=srnum+1
+					response=response+str(srnum)+". "+restaurant[0]+ " in "+ restaurant[1]+" has been rated "+str(restaurant[3])+"."+"\n"
+			return response
+
+		def filter_restaurants_by_price(d, price_limit):
+			result = []
+			for restaurant in d['restaurants']:
+				if price_limit != -1 and restaurant['restaurant']['average_cost_for_two'] <= price_limit:
+					result.append(restaurant_tuple(restaurant))
+				else:
+					result.append(restaurant_tuple(restaurant))
+			result = sorted(result,reverse=True, key=lambda x:x[3])
+			result = result[:5]
+			return result
+
+		def restaurant_tuple(restaurant):
+			tup = (
+						restaurant['restaurant']['name'],
+						restaurant['restaurant']['location']['address'],
+						restaurant['restaurant']['average_cost_for_two'],
+						restaurant['restaurant']['user_rating']['aggregate_rating']
+					)
+			return tup
+		
 		config={ "user_key":"e09b845afff853b9646348fb80920eaf"}
 		zomato = zomatopy.initialize_app(config)
+		
 		loc = tracker.get_slot('location')
-		cuisine = tracker.get_slot('cuisine')
 		location_detail=zomato.get_location(loc, 1)
 		d1 = json.loads(location_detail)
 		lat=d1["location_suggestions"][0]["latitude"]
 		lon=d1["location_suggestions"][0]["longitude"]
+		
+		cuisine = tracker.get_slot('cuisine')
 		cuisines_dict={'bakery':5,'chinese':25,'cafe':30,'italian':55,'biryani':7,'north indian':50,'south indian':85,'american':1,'mexican':3}
+		
 		results=zomato.restaurant_search("", lat, lon, str(cuisines_dict.get(cuisine)), 5)
 		d = json.loads(results)
+		
 		response=""
 		if d['results_found'] == 0:
 			response= "no results"
 		else:
-			for restaurant in d['restaurants']:
-				response=response+ "Found "+ restaurant['restaurant']['name']+ " in "+ restaurant['restaurant']['location']['address']+"\n"
+			price_dict = {'low': 300, 'medium': 700, 'high': -1} #-1 is for no limit in price
+			price_limit = price_dict.get(tracker.get_slot('price'))
+			restaurants = filter_restaurants_by_price(d, price_limit)
+			response = create_response(restaurants)
 		
 		dispatcher.utter_message("-----"+response)
-		return [SlotSet('results',response)]
-
+		
+		return [SlotSet('location',loc)]
+		
+		
 
 class ActionSendEmail(Action):
 	def name(self):
