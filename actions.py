@@ -69,9 +69,9 @@ class ActionSearchRestaurants(Action):
 			restaurants = filter_restaurants_by_price(d, price_limit)
 			response = create_response(restaurants)
 		
-		dispatcher.utter_message("-----"+response)
+		dispatcher.utter_message(response)
 		
-		return [SlotSet('location',loc)]
+		return [SlotSet('results',response)]
 		
 		
 
@@ -109,7 +109,7 @@ class ActionValidateCity(Action):
 	
 	def run(self, dispatcher, tracker, domain):
 		list_of_cities = ['bangalore', 'chennai', 'delhi', 'hyderabad', 'kolkata', 'mumbai', 'ahmedabad', 'pune', 'kochi','agra', 'ajmer', 'aligarh', 'amravati', 'amritsar', 'asansol', 
-						  'aurangabad', 'bareilly', 'belgaum', 'bhavnagar', 'bhiwandi', 'bhopal', 'bhubaneswar', 'bikaner', 'bilaspur', 'bokaro steel city', 'chandigarh', 'coimbatore nagpur', 
+						  'aurangabad', 'bareilly', 'belgaum', 'bhavnagar', 'bhiwandi', 'bhopal', 'bhubaneswar', 'bikaner', 'bilaspur', 'bokaro steel city', 'chandigarh', 'coimbatore', 'nagpur', 
 						  'cuttack', 'dehradun', 'dhanbad', 'bhilai', 'durgapur', 'erode', 'faridabad', 'firozabad', 'ghaziabad', 'gorakhpur', 
 						  'gulbarga', 'guntur', 'gwalior', 'gurgaon', 'guwahati', 'hamirpur', 'hubli–dharwad', 
 						  'indore', 'jabalpur', 'jaipur', 'jalandhar', 'jammu', 'jamnagar', 'jamshedpur', 'jhansi', 'jodhpur', 'kakinada', 
@@ -119,9 +119,13 @@ class ActionValidateCity(Action):
 						  'sangli', 'shimla', 'siliguri', 'solapur', 'srinagar', 'thiruvananthapuram', 'thrissur', 'tiruchirappalli', 'tirur', 
 						  'tirupati', 'tirunelveli', 'tiruppur', 'tiruvannamalai', 'ujjain', 'bijapur', 'vadodara', 'varanasi', 'vasai-virar city', 
 						  'vijayawada', 'vellore', 'warangal', 'surat' ,'visakhapatnam'] 
-		if tracker.get_slot('location') not in list_of_cities:
-		 dispatcher.utter_message("We don't operate in that city yet. Sorry.")
+		loc = tracker.get_slot('location')
+		loc = loc.lower()
+		if loc not in list_of_cities:
+			dispatcher.utter_message("Sorry, we don’t operate in this city. Can you please specify some other location")
+			return [SlotSet('location',None)]
+		else:
+			return [SlotSet('location',loc)]
 		
-		return [SlotSet('location',None)]
 
 	

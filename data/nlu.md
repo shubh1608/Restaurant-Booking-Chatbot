@@ -22,6 +22,17 @@
 - thank u
 - Thanks
 - Thanks
+- Thanks
+- Yes
+- Got it, Thanks
+- Yes
+- Got it, thanks
+- Yes
+- Great, got it Thanks
+- Yes
+- Got it, Thanks
+- Yes
+- Got it, Thanks
 
 ## intent:goodbye
 - bye
@@ -54,8 +65,19 @@
 - hi
 - hi
 - hi
-- high
 - hi
+- hola
+- Hello
+- Hello
+- Hello
+- Hola
+- Hello
+- Hola
+- Hello there
+- Hey bot
+- Hi bot
+- Hola Bot
+- hola
 
 ## intent:restaurant_search
 - i'm looking for a place to eat
@@ -135,10 +157,61 @@
 - [medium](price)
 - [low](price)
 - [high](price)
+- [high](price)
+- [high](price)
+- [high](price)
 - find me restaurants
 - [Mumbai](location)
 - [Italian](cuisine)
 - [medium](price)
+- [xyz@abc.com](email)
+- it's [abcd@gmail.com](email)
+- my email id is [pqr@live.com](email)
+- [asdh@yahoo.com](email)
+- find me restaurants
+- [Nagpur](location)
+- [South Indian](cuisine)
+- [medium](price)
+- No
+- Yes
+- find me restaurants
+- [Shimla](location)
+- [North Indian](cuisine)
+- [medium](price)
+- [shubh@gmail.com](email)
+- Find me restaurants
+- [Bhilai](location)
+- find me in [Kolkata](location)
+- [Italian](cuisine)
+- [medium](price)
+- [shubh@gmail.com](email)
+- Find me restaurants
+- somewhere in [Goa](location)
+- [Mexican](cuisine)
+- [medium](price)
+- [swayam@yahoo.com](email)
+- Find me some good place to eat
+- [Mangalore](location)
+- [South Indian](cuisine)
+- [medium](price)
+- No
+- find me some good place for dinner
+- [Bhilai](location)
+- [Raigarh](location)
+- [Bhilai](location)
+- [North Indian](cuisine)
+- [medium](price)
+- No
+- Find me [italian](cuisine) restaurants
+- [Bhilai](location)
+- [medium](price)
+- [spatel@xyz.com](email)
+- Find me [mexican](cuisine) restaurants in [Pune](location)
+- Find me [chinese](cuisine) restaurants
+- [Bhilai](location) it is
+- Find me some [chinese](cuisine) restaurants in [Pune](location)
+- [high](price)
+- [shubh@gmail.com](email)
 
 ## synonym:4
 - four
