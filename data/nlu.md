@@ -33,6 +33,10 @@
 - Got it, Thanks
 - Yes
 - Got it, Thanks
+- Yes
+- Got it, Thanks
+- Yes
+- k, Thanks
 
 ## intent:goodbye
 - bye
@@ -78,6 +82,8 @@
 - Hi bot
 - Hola Bot
 - hola
+- Hello
+- Hello
 
 ## intent:restaurant_search
 - i'm looking for a place to eat
@@ -212,6 +218,14 @@
 - Find me some [chinese](cuisine) restaurants in [Pune](location)
 - [high](price)
 - [shubh@gmail.com](email)
+- find me some good restaurants in [Bhopal](location)
+- [American](cuisine)
+- [medium](price)
+- [xyz@yahoo.com](email)
+- find me restaurants in [Bhopal](location)
+- [South Indian](cuisine)
+- [medium](price)
+- [abcd@pqrt.com](email)
 
 ## synonym:4
 - four

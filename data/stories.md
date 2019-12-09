@@ -100,7 +100,7 @@
 * restaurant_search
     - utter_goodbye
 	
-##_, C, L, VT, P, EY
+##C, L, VT, P, EY
 * greet
     - utter_greet
 * restaurant_search{"cuisine": "chinese"}
@@ -125,7 +125,7 @@
 * affirm
     - utter_goodbye
 	
-##_, C, L, VT, P, EN
+##C, L, VT, P, EN
 * greet
     - utter_greet
 * restaurant_search{"cuisine": "chinese"}
@@ -144,7 +144,7 @@
 * restaurant_search
     - utter_goodbye
 
-##_, C, L, VF, P, EY
+##C, L, VF, P, EY
 * greet
     - utter_greet
 * restaurant_search{"cuisine": "chinese"}
@@ -173,7 +173,7 @@
 * affirm
     - utter_goodbye
 	
-##_, C, L, VF, P, EN
+##C, L, VF, P, EN
 * greet
     - utter_greet
 * restaurant_search{"cuisine": "chinese"}
@@ -192,6 +192,102 @@
     - slot{"price": "medium"}
     - action_search_restaurants
     - slot{"results": "1. Toy Beach Club in Candolim Beach Road, Candolim, Goa has been rated 4.9.\n2. Purple Martini in Anjuna Beach, Anjuna, Goa has been rated 4.9.\n3. The Fisherman's Wharf in Behind The Leela, Mobor, Cavelossim, Goa has been rated 4.6.\n4. Thalassa in Plot 301, 1, Near Teso Waterfront, Vaddy, Siolim, Goa has been rated 4.4.\n5. Britto's Bar & Restaurant in Baga Calangute, Bardez, Baga, Goa has been rated 4.3.\n"}
+    - utter_suggest_email
+* restaurant_search
+    - utter_goodbye
+
+## L, VT, C, P, EY
+* greet
+    - utter_greet
+* restaurant_search{"location": "Bhopal"}
+    - slot{"location": "Bhopal"}
+    - action_validate_city
+    - slot{"location": "bhopal"}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - utter_ask_price
+* restaurant_search{"price": "medium"}
+    - slot{"price": "medium"}
+    - action_search_restaurants
+    - slot{"results": "1. Manohar Dairy And Restaurant in 132, Zone 1, Maharana Pratap Nagar, Bhopal has been rated 4.9.\n2. Zam Zam Fast Food in Near Bharat Talkies, Hamidia Road, Peer Gate Area, Bhopal has been rated 4.4.\n3. Zam Zam Fast Food in Ground Floor Alpana Cinema Parisar Hamidia road, Peer Gate Area, Bhopal has been rated 4.3.\n4. Sagar Gaire Fast Food - Idgah Hills in Shop 1, 2, 3, Meenakshi Complex, Aali Manzil Road, Niyamatpura, Idgah Hills, Bhopal has been rated 4.2.\n5. Bapu Ki Kutia in Near Rajbhavan, Roshanpura, TT Nagar, Bhopal has been rated 3.9.\n"}
+    - utter_suggest_email
+* affirm
+    - utter_ask_email
+* restaurant_search{"email": "xyz@yahoo.com"}
+    - slot{"email": "xyz@yahoo.com"}
+    - action_send_mail
+    - slot{"email": "xyz@yahoo.com"}
+* affirm
+    - utter_goodbye
+	
+## L, VT, C, P, EN
+* greet
+    - utter_greet
+* restaurant_search{"location": "Bhopal"}
+    - slot{"location": "Bhopal"}
+    - action_validate_city
+    - slot{"location": "bhopal"}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - utter_ask_price
+* restaurant_search{"price": "medium"}
+    - slot{"price": "medium"}
+    - action_search_restaurants
+    - slot{"results": "1. Manohar Dairy And Restaurant in 132, Zone 1, Maharana Pratap Nagar, Bhopal has been rated 4.9.\n2. Zam Zam Fast Food in Near Bharat Talkies, Hamidia Road, Peer Gate Area, Bhopal has been rated 4.4.\n3. Zam Zam Fast Food in Ground Floor Alpana Cinema Parisar Hamidia road, Peer Gate Area, Bhopal has been rated 4.3.\n4. Sagar Gaire Fast Food - Idgah Hills in Shop 1, 2, 3, Meenakshi Complex, Aali Manzil Road, Niyamatpura, Idgah Hills, Bhopal has been rated 4.2.\n5. Bapu Ki Kutia in Near Rajbhavan, Roshanpura, TT Nagar, Bhopal has been rated 3.9.\n"}
+    - utter_suggest_email
+* restaurant_search
+    - utter_goodbye
+	
+## L, VF, C, P, EY
+* greet
+    - utter_greet
+* restaurant_search{"location": "Kasol"}
+    - slot{"location": "Kasol"}
+    - action_validate_city
+    - slot{"location": "null"}
+* restaurant_search{"location": "Bhopal"}
+	- slot{"location": "Kasol"}
+    - action_validate_city
+    - slot{"location": "null"}
+	- utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - utter_ask_price
+* restaurant_search{"price": "medium"}
+    - slot{"price": "medium"}
+    - action_search_restaurants
+    - slot{"results": "1. Manohar Dairy And Restaurant in 132, Zone 1, Maharana Pratap Nagar, Bhopal has been rated 4.9.\n2. Zam Zam Fast Food in Near Bharat Talkies, Hamidia Road, Peer Gate Area, Bhopal has been rated 4.4.\n3. Zam Zam Fast Food in Ground Floor Alpana Cinema Parisar Hamidia road, Peer Gate Area, Bhopal has been rated 4.3.\n4. Sagar Gaire Fast Food - Idgah Hills in Shop 1, 2, 3, Meenakshi Complex, Aali Manzil Road, Niyamatpura, Idgah Hills, Bhopal has been rated 4.2.\n5. Bapu Ki Kutia in Near Rajbhavan, Roshanpura, TT Nagar, Bhopal has been rated 3.9.\n"}
+    - utter_suggest_email
+* affirm
+    - utter_ask_email
+* restaurant_search{"email": "xyz@yahoo.com"}
+    - slot{"email": "xyz@yahoo.com"}
+    - action_send_mail
+    - slot{"email": "xyz@yahoo.com"}
+* affirm
+    - utter_goodbye
+	
+## L, VF, C, P, EN
+* greet
+    - utter_greet
+* restaurant_search{"location": "Kasol"}
+    - slot{"location": "Kasol"}
+    - action_validate_city
+    - slot{"location": "null"}
+* restaurant_search{"location": "Bhopal"}
+	- slot{"location": "Kasol"}
+    - action_validate_city
+    - slot{"location": "null"}
+	- utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - utter_ask_price
+* restaurant_search{"price": "medium"}
+    - slot{"price": "medium"}
+    - action_search_restaurants
+    - slot{"results": "1. Manohar Dairy And Restaurant in 132, Zone 1, Maharana Pratap Nagar, Bhopal has been rated 4.9.\n2. Zam Zam Fast Food in Near Bharat Talkies, Hamidia Road, Peer Gate Area, Bhopal has been rated 4.4.\n3. Zam Zam Fast Food in Ground Floor Alpana Cinema Parisar Hamidia road, Peer Gate Area, Bhopal has been rated 4.3.\n4. Sagar Gaire Fast Food - Idgah Hills in Shop 1, 2, 3, Meenakshi Complex, Aali Manzil Road, Niyamatpura, Idgah Hills, Bhopal has been rated 4.2.\n5. Bapu Ki Kutia in Near Rajbhavan, Roshanpura, TT Nagar, Bhopal has been rated 3.9.\n"}
     - utter_suggest_email
 * restaurant_search
     - utter_goodbye
@@ -325,5 +421,103 @@
     - slot{"email": "shubh@gmail.com"}
     - action_send_mail
     - slot{"email": "shubh@gmail.com"}
+* affirm
+    - utter_goodbye
+	
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "chinese", "location": "Pune"}
+    - slot{"cuisine": "chinese"}
+    - slot{"location": "Pune"}
+    - action_validate_city
+    - slot{"location": "pune"}
+    - utter_ask_price
+* restaurant_search{"price": "high"}
+    - slot{"price": "high"}
+    - action_search_restaurants
+    - slot{"results": "1. Asia Kitchen By Mainland China in City Point, Ground Floor, Dhole Patil Road, Pune has been rated 4.6.\n2. Shizusan in Upper Ground Floor, Phoenix Market City, Viman Nagar, Pune has been rated 4.5.\n3. Mainland China in 403/2, Ground Floor, BIG ICC Road, Senapati Bapat Road, Pune has been rated 4.4.\n4. Kimchi in Sambhaji Nagar, Opposite Hyundai Showroom, Beside HP Petrol Pump, Kharadi, Pune has been rated 4.3.\n5. Chang's in King Sport Home 7, Datta Mandir Chowk, Viman Nagar, Pune has been rated 4.1.\n"}
+    - utter_suggest_email
+* affirm
+    - utter_ask_email
+* restaurant_search{"email": "shubh@gmail.com"}
+    - slot{"email": "shubh@gmail.com"}
+    - action_send_mail
+    - slot{"email": "shubh@gmail.com"}
+* affirm
+    - utter_goodbye
+	
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "chinese", "location": "Pune"}
+    - slot{"cuisine": "chinese"}
+    - slot{"location": "Pune"}
+    - action_validate_city
+    - slot{"location": "pune"}
+    - utter_ask_price
+* restaurant_search{"price": "high"}
+    - slot{"price": "high"}
+    - action_search_restaurants
+    - slot{"results": "1. Asia Kitchen By Mainland China in City Point, Ground Floor, Dhole Patil Road, Pune has been rated 4.6.\n2. Shizusan in Upper Ground Floor, Phoenix Market City, Viman Nagar, Pune has been rated 4.5.\n3. Mainland China in 403/2, Ground Floor, BIG ICC Road, Senapati Bapat Road, Pune has been rated 4.4.\n4. Kimchi in Sambhaji Nagar, Opposite Hyundai Showroom, Beside HP Petrol Pump, Kharadi, Pune has been rated 4.3.\n5. Chang's in King Sport Home 7, Datta Mandir Chowk, Viman Nagar, Pune has been rated 4.1.\n"}
+    - utter_suggest_email
+* affirm
+    - utter_ask_email
+* restaurant_search{"email": "shubh@gmail.com"}
+    - slot{"email": "shubh@gmail.com"}
+    - action_send_mail
+    - slot{"email": "shubh@gmail.com"}
+* affirm
+    - utter_goodbye
+	
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "chinese", "location": "Pune"}
+    - slot{"cuisine": "chinese"}
+    - slot{"location": "Pune"}
+    - action_validate_city
+    - slot{"location": "pune"}
+    - utter_ask_price
+* restaurant_search{"price": "high"}
+    - slot{"price": "high"}
+    - action_search_restaurants
+    - slot{"results": "1. Asia Kitchen By Mainland China in City Point, Ground Floor, Dhole Patil Road, Pune has been rated 4.6.\n2. Shizusan in Upper Ground Floor, Phoenix Market City, Viman Nagar, Pune has been rated 4.5.\n3. Mainland China in 403/2, Ground Floor, BIG ICC Road, Senapati Bapat Road, Pune has been rated 4.4.\n4. Kimchi in Sambhaji Nagar, Opposite Hyundai Showroom, Beside HP Petrol Pump, Kharadi, Pune has been rated 4.3.\n5. Chang's in King Sport Home 7, Datta Mandir Chowk, Viman Nagar, Pune has been rated 4.1.\n"}
+    - utter_suggest_email
+* affirm
+    - utter_ask_email
+* restaurant_search{"email": "shubh@gmail.com"}
+    - slot{"email": "shubh@gmail.com"}
+    - action_send_mail
+    - slot{"email": "shubh@gmail.com"}
+* affirm
+    - utter_goodbye
+
+
+	
+
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"location": "Bhopal"}
+    - slot{"location": "Bhopal"}
+    - action_validate_city
+    - slot{"location": "bhopal"}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "South Indian"}
+    - slot{"cuisine": "South Indian"}
+    - utter_ask_price
+* restaurant_search{"price": "medium"}
+    - slot{"price": "medium"}
+    - action_search_restaurants
+    - slot{"results": "1. Manohar Dairy And Restaurant in 132, Zone 1, Maharana Pratap Nagar, Bhopal has been rated 4.9.\n2. Zam Zam Fast Food in Near Bharat Talkies, Hamidia Road, Peer Gate Area, Bhopal has been rated 4.4.\n3. Zam Zam Fast Food in Ground Floor Alpana Cinema Parisar Hamidia road, Peer Gate Area, Bhopal has been rated 4.3.\n4. Sagar Gaire Fast Food - Idgah Hills in Shop 1, 2, 3, Meenakshi Complex, Aali Manzil Road, Niyamatpura, Idgah Hills, Bhopal has been rated 4.2.\n5. Bapu Ki Kutia in Near Rajbhavan, Roshanpura, TT Nagar, Bhopal has been rated 3.9.\n"}
+    - utter_suggest_email
+* affirm
+    - utter_ask_email
+* restaurant_search{"email": "abcd@pqrt.com"}
+    - slot{"email": "abcd@pqrt.com"}
+    - action_send_mail
+    - slot{"email": "abcd@pqrt.com"}
 * affirm
     - utter_goodbye
