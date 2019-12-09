@@ -6,6 +6,10 @@ from rasa_sdk import Action
 from rasa_sdk.events import SlotSet
 import zomatopy
 import json
+import smtplib, ssl
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
 
 class ActionSearchRestaurants(Action):
 	def name(self):
