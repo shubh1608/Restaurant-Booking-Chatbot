@@ -1,4 +1,4 @@
-# Restaurant Discovery Chatbot
+# Restaurant Finder Chatbot
 
 #### Project Status: [Completed]
 
